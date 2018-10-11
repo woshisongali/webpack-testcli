@@ -1,0 +1,19 @@
+{
+  "name": "webpack-testcli",
+  "version": "1.0.0",
+  "description": "webpack study",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/woshisongali/webpack-testcli.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/woshisongali/webpack-testcli/issues"
+  },
+  "homepage": "https://github.com/woshisongali/webpack-testcli#readme"
+}
