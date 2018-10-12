@@ -1,0 +1,63 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.multiCursorModifier": "ctrlCmd",
+    "files.associations": {
+        "*.tpl": "html",
+        "*.vue": "vue",
+        "*.wxml": "html",
+        "*.html": "html",
+        "*.wxss": "css",
+        "*.vm": "html"
+    },
+    "emmet.syntaxProfiles": {
+        "vue-html": "html",
+        "vue": "vue"
+    },
+    "window.zoomLevel": 0,
+    "todohighlight.include": [
+        "**/*.js",
+        "**/*.jsx",
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.html",
+        "**/*.php",
+        "**/*.css",
+        "**/*.scss",
+        "**/*.vue",
+        "**/*.styl"
+    ],
+    "todohighlight.isEnable": true,
+    "javascript.validate.enable": false,
+    "emmet.includeLanguages": {
+        "vue-html": "html",
+        "vue": "html",
+        "velocity": "html",
+        "javascript": "javascriptreact"
+    },
+    "emmet.triggerExpansionOnTab": true,
+    "emmet.showSuggestionsAsSnippets": true,
+    "css.fileExtensions": [
+        "css",
+        "scss",
+        "styl"
+    ],
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
+    "fileheader.Author": "zhaochenwei",
+    "fileheader.LastModifiedBy": "zhaochenwei",
+    "workbench.iconTheme": "vscode-icons",
+    "fileheader.tpl": "/*\r\n * @Author: {author}\r\n * @Date: {createTime}\r\n * @Last Modified by:   {lastModifiedBy}\r\n * @Last Modified time: {updateTime}\r\n */\r\n",
+    "files.autoSave": "off",
+    "editor.tabSize": 2,
+    "gitlens.keymap": "none",
+    "gitlens.advanced.messages": {
+        "suppressLineUncommittedWarning": true,
+        "suppressShowKeyBindingsNotice": true
+    },
+    "gitlens.historyExplorer.enabled": true,
+    "editor.formatOnSave": false,
+    "open-in-browser.default": "chrome"
+}
