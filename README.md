@@ -100,3 +100,28 @@ module: {
 
 移除public文件夹，利用此插件，index.html文件会自动生成，此外CSS已经通过前面的操作打包到JS中了。
 在app目录下，创建一个index.tmpl.html文件模板，这个模板包含title等必须元素，在编译过程中，插件会依据此模板生成最终的html页面，会自动添加所依赖的 css, js，favicon等文件，index.tmpl.html中的模板源代码如下：
+
+###去除build文件中的残余文件
+
+添加了hash之后，会导致改变文件内容后重新打包时，文件名不同而内容越来越多，因此这里介绍另外一个很好用的插件clean-webpack-plugin。
+npm install clean-webpack-plugin --save-dev
+
+```
+const CleanWebpackPlugin = require("clean-webpack-plugin");
+  plugins: [
+    ...// 这里是之前配置的其它各种插件
+    new CleanWebpackPlugin('build/*.*', {
+      root: __dirname,
+      verbose: true,
+      dry: false
+  })
+  ]
+```
+
+###优化插件
+
+webpack提供了一些在发布阶段非常有用的优化插件，它们大多来自于webpack社区，可以通过npm安装，通过以下插件可以完成产品发布阶段所需的功能
+
+OccurenceOrderPlugin :为组件分配ID，通过这个插件webpack可以分析和优先考虑使用最多的模块，并为它们分配最小的ID
+UglifyJsPlugin：压缩JS代码；
+ExtractTextPlugin：分离CSS和JS文件
