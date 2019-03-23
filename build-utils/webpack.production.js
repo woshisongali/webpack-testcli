@@ -13,15 +13,14 @@ module.exports = () => ({
   optimization: {
     minimizer: [
       new UglifyJsPlugin({
-        uglifyOptions: {
-          compress: {
-            warnings: true,
-            drop_console: true
-          }
+        compress: {
+          warnings: false,
+          drop_debugger: true,
+          drop_console: true
         },
-        sourceMap: true,
-        parallel: true
+        sourceMap: true
       }),
+
       new OptimizeCSSAssetsPlugin({})
     ],
 
