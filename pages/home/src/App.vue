@@ -1,6 +1,7 @@
 <template>
   <div>{{msg}}
     <p class="outbox"><span class="my-icon">the arrow icon</span></p>
+    <p class="imgTest"></p>
   </div>
 </template>
 
@@ -29,6 +30,12 @@ export default {
   width: 30px;
   height: 30px;
   background: url(../assets/ok-icon.png) no-repeat;
+}
+.imgTest {
+  display: block;
+  width: 360px;
+  height: 400px;
+  background: url(../assets/timg.jpg) no-repeat
 }
 </style>
 

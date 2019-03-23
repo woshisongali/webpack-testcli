@@ -17,7 +17,7 @@ const sourceObj = {
 
   output: {
     path: path.resolve(__dirname, "dist"),
-    // publishPath: 'dist/',
+    // publicPath: 'dist/',
     filename: "[name]-bundle.js",
     chunkFilename: "[name].[chunkhash].js"
   }
