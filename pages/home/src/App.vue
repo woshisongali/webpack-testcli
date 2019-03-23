@@ -8,6 +8,9 @@ export default {
     return {
       msg: ' hello vue !!!'
     }
+  },
+  mounted () {
+    console.log('has mounted')
   }
 }
 </script>

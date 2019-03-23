@@ -2,6 +2,9 @@ const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+
+// const DropConsoleWebpackPlugin = require('drop-console-webpack-plugin')
 
 module.exports = () => ({
   // output: {
@@ -9,9 +12,28 @@ module.exports = () => ({
   // },
   optimization: {
     minimizer: [
-      new UglifyJsPlugin(),
+      new UglifyJsPlugin({
+        uglifyOptions: {
+          compress: {
+            warnings: true,
+            drop_console: true
+          }
+        },
+        sourceMap: true,
+        parallel: true
+      }),
       new OptimizeCSSAssetsPlugin({})
-    ]
+    ],
+
+    splitChunks: {
+      cacheGroups: {
+          commons: {
+              name: "commons",
+              chunks: "initial",
+              minChunks: 2
+          }
+      }
+    }
   },
   module: {
     rules: [
@@ -45,20 +67,24 @@ module.exports = () => ({
       }
     ]
   },
-
-  optimization: {
-    splitChunks: {
-        cacheGroups: {
-            commons: {
-                name: "commons",
-                chunks: "initial",
-                minChunks: 2
-            }
-        }
-    }
+  
+  stats: {
+    colors: true,
+    modules: false,
+    children: false,
+    chunks: false,
+    chunkModules: false
   },
 
   plugins: [
+    //配置环境
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"'
+      }
+    }),
     new MiniCssExtractPlugin()
+    // new BundleAnalyzerPlugin({ analyzerPort: 8919 }),
+    
   ]
 });
