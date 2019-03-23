@@ -125,3 +125,7 @@ webpack提供了一些在发布阶段非常有用的优化插件，它们大多�
 OccurenceOrderPlugin :为组件分配ID，通过这个插件webpack可以分析和优先考虑使用最多的模块，并为它们分配最小的ID
 UglifyJsPlugin：压缩JS代码；
 ExtractTextPlugin：分离CSS和JS文件
+
+
+### 关于路径
+如果测试环境资源正常引入， 生产环境无法载入，那就是路径配置引起的问题。 你可以要进行publicPath等相关路径的配置。
