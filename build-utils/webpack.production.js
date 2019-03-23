@@ -2,6 +2,7 @@ const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 // const DropConsoleWebpackPlugin = require('drop-console-webpack-plugin')
@@ -81,6 +82,7 @@ module.exports = () => ({
         NODE_ENV: '"production"'
       }
     }),
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin()
     // new BundleAnalyzerPlugin({ analyzerPort: 8919 }),
     
