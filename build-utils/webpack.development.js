@@ -1,4 +1,5 @@
 const webpack = require('webpack')
+console.log('==========================')
 module.exports = () => ({
   devtool: 'eval-source-map',
   module: {
@@ -13,7 +14,8 @@ module.exports = () => ({
       },
       {
         test: /\.js$/,
-        use: ['babel-loader']
+        use: ['babel-loader'],
+        exclude: /node_modules/
       },
       { test: /\.(gif|png|jpg|woff|svg|ttf|eot)$/, 
         use: [{
@@ -25,5 +27,16 @@ module.exports = () => ({
       }
     ]
   },
-  plugins: [new webpack.HotModuleReplacementPlugin()]
+
+  stats: {
+    colors: true,
+    modules: false,
+    children: false,
+    chunks: false,
+    chunkModules: false
+  },
+
+  plugins: [
+    // new webpack.HotModuleReplacementPlugin()
+  ]
 });

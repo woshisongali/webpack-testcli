@@ -10,14 +10,15 @@ const modeConfig = env => require(`./build-utils/webpack.${env}`)(env);
 const sourceObj = {
   entry: {
     // 'index': './pages/program1/index/src/index.js'
-    "index": "./pages/home/index.js",
-     vendor: ['vue']
+    "./home/index": "./pages/home/index.js",
+     "./vendor": ['vue']
     // 'index': './src/index2.js'
   },
 
   output: {
-    filename: "[name]-bundle.js",
     path: path.resolve(__dirname, "dist"),
+    // publishPath: 'dist/',
+    filename: "[name]-bundle.js",
     chunkFilename: "[name].[chunkhash].js"
   }
 }
@@ -42,7 +43,8 @@ module.exports = ({
           // { test: /\.jpg$/, use: [ "file-loader" ] }
           {
             test: /\.vue$/,
-            loader: 'vue-loader'
+            loader: 'vue-loader',
+            exclude: /node_modules/
           }
         ]
       },
